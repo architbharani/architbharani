@@ -113,9 +113,30 @@ if Future != st.session_state.value:
     def plot_raw_data():
         fig = go.Figure()
         fig.add_trace(go.Line(x=data['Date'], y=data['Electricity'], name='Time Series'))
-        fig.add_trace(go.Line(x=df_result.index, y=df_result['Predicted'], name='Predictions'))
+        # fig.add_trace(go.Line(x=df_result.index, y=df_result['Predicted'], name='Predictions'))
         fig.layout.update(title_text="Time Series Data", xaxis_rangeslider_visible=True)
         st.plotly_chart(fig)
+
+    plot_raw_data()
+
+
+    def plot_raw_data1():
+        # Assuming df_result_index is a pandas DataFrame or Series
+        filtered_data = data[data['Date'].isin(df_result.index)]
+
+        fig = go.Figure()
+        fig.add_trace(go.Line(x=filtered_data['Date'], y=filtered_data['Electricity'], name='Time Series'))
+        fig.add_trace(go.Line(x=df_result.index, y=df_result['Predicted'], name='Predictions'))
+        fig.layout.update(title_text="Actual vs Predicted", xaxis_rangeslider_visible=True)
+        st.plotly_chart(fig)
+
+
+    # Call the function
+    plot_raw_data1()
+
+
+st.session_state.value = Future
+
 
 
     plot_raw_data()
