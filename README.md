@@ -35,7 +35,8 @@ model.load_state_dict(state_dict)
 # Print the names and values of parameters
 for name, param in model.named_parameters():
     print(f"{name}: {param}")
-'''
+
+python'''
 
 After Loading LSTM.pth and LSTM.py both, run Model.py
 
