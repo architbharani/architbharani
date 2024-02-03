@@ -1,17 +1,13 @@
 This is the Electricity Data Final Project. Here are the steps to run the code:
 Load LSTM.pth,LSTM.py in the environment
 LSTM.pth is the pretrained model,to use directly,You can see the weights and biases by
-# Load the saved model state dictionary
+
+
+
 import torch
 state_dict = torch.load('LSTM.pth')
-
-import torch
 import torch.nn as nn
-
-# Define your LSTM model architecture
 import numpy as np
-
-
 class LSTMModel(nn.Module):
     def __init__(self, input_dim, hidden_dim, num_layers, output_dim):
         super(LSTMModel, self).__init__()
@@ -28,14 +24,10 @@ class LSTMModel(nn.Module):
         return out
 
 model = LSTMModel(input_dim=11, hidden_dim=64, num_layers=2, output_dim=11)
-
-
-# Load the state dictionary into the model
 model.load_state_dict(state_dict)
-
-# Access and print the weights and biases
 for name, param in model.named_parameters():
     print(f"{name}: {param}")
+
 
 
 After Loading LSTM.pth and LSTM.py both, run Model.py
