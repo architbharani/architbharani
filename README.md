@@ -1,5 +1,6 @@
 This is the Electricity Data Final Project. Here are the steps to run the code:
-Load LSTM.pth,LSTM.py in the environment
+Load LSTM.pth,LSTM.py and '15-17(2).xlsx' in the environment
+
 LSTM.pth is the pretrained model,to use directly,You can see the weights and biases by
 
 ```python
