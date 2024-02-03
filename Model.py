@@ -137,9 +137,3 @@ if Future != st.session_state.value:
 
 st.session_state.value = Future
 
-
-
-    plot_raw_data()
-
-st.session_state.value = Future
-
